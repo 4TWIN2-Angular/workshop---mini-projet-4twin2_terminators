@@ -9,7 +9,7 @@ import { Equipe } from '../models/equipe';
 export class DataService {
   public baseurl = 'http://localhost:8081/equipe';
   constructor(private http:HttpClient) { }
-addEquipe(data:any){
-  return this.http.post(this.baseurl, data) ;
+addEquipe(equipe?: Equipe): Observable<Object>{
+  return this.http.post<Object>(`${this.baseurl}`, equipe) ;
 }
 }

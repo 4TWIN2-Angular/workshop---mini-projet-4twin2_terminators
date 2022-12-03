@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { EquipeComponent } from './equipe/equipe.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ListEquipeComponent } from './list-equipe/list-equipe.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     EquipeComponent,
+    ListEquipeComponent,
 
   ],
   imports: [

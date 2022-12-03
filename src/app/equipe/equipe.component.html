@@ -1,10 +1,40 @@
-<form (ngSubmit)="addEquipe()">
+
+<section class="sec">
+<form #f="ngForm" (ngSubmit)="addEquipe(f.value)">
+    <div ngModelGroup="firstInfo" #sg="ngModelGroup">
+    <div class="form-group">
     <label>
-        Nom Equipe : <input [(ngModel)]="equipe.nomEquipe" name="nomEquipe" class="form-control"/>
+        Nom Equipe : <input type="text" [(ngModel)]="equipe.nomEquipe" name="nomEquipe" class="form-control" required  minlength="3" pattern="[a-zA-Z]*" #first="ngModel" id="nomEquipe" placeholder="Enter Nom d'equipe"/>
       </label>
+    </div>
+    <div *ngIf="first.touched && first?.invalid">
+        <div *ngIf="f.hasError('required', 'first')" class="alert alert-danger" role="alert">
+            Nom d'equipe est obligatoire !
+          </div>
+          <div *ngIf = "first.hasError('minlength') && !first.hasError('required')" class = "alert alert-danger">
+            <span>Nombre de lettres minimale est 3</span>
+          </div>  
+         <div *ngIf="first.hasError('pattern')" class="alert alert-danger" role="alert">
+            Tous sont des lettres
+         </div>
+         </div>
+        
+    <div class="form-group">
       <label>
-        Niveau : <input [(ngModel)]="equipe.niveau" name="niveau" class="form-control" />
+        Niveau : <select type="" [(ngModel)]="equipe.niveau" name="niveau" class="form-control" required  #second="ngModel" id="niveau" placeholder="Enter Niveau">
+            <option value="JUNIOR">JUNIOR</option>
+            <option value="SENIOR">SENIOR</option>
+            <option value="EXPERT">EXPERT</option>
+            </select>
+            <div *ngIf="second.touched && second?.invalid">
+                <div *ngIf="f.hasError('required', 'second')" class="alert alert-danger" role="alert">
+                    Niveau est obligatoire !
+                  </div>
+                </div>
       </label>
-    
-      <button type="submit">Submit</button>  
+
+    </div>
+      <button type="submit" [disabled]="f.invalid">Submit</button>
+    </div>  
 </form>
+</section>

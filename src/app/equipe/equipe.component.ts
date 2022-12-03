@@ -15,7 +15,7 @@ export class EquipeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  addEquipe(){
+  addEquipe(f:any){
     console.log(this.equipe);
     
     this.dataService.addEquipe(this.equipe).subscribe(res => {

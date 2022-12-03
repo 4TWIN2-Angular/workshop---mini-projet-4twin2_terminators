@@ -119,13 +119,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/charts/chartjs.html" class="nav-link">
+                <a routerLink="addequipe" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Ajouter Equipe</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/charts/flot.html" class="nav-link">
+                <a routerLink="equipes" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Afficher Liste d'Equipes</p>
                 </a>
@@ -222,19 +222,24 @@
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
-  <!--
-  <br><br><br>
-  <body>
     
+  </aside>
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+   
+    <!-- /.content-header -->
 
-  <section class="container">
-    <div>
-      <app-equipe></app-equipe>
-    </div>
-  </section>
-</body> -->
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <router-outlet></router-outlet>
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.control-sidebar -->
   <!-- Main Footer -->
   <footer class="main-footer">
     
@@ -247,4 +252,4 @@
 
 
 
-<router-outlet></router-outlet>
+
