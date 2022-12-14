@@ -8,6 +8,8 @@ import { EquipeComponent } from './equipe/equipe.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ListEquipeComponent } from './list-equipe/list-equipe.component';
+import { LoginComponent } from './login/login.component';
+import { UpdateEtudiantComponent } from './update-etudiant/update-etudiant.component';
 
 
 @NgModule({
@@ -15,6 +17,12 @@ import { ListEquipeComponent } from './list-equipe/list-equipe.component';
     AppComponent,
     EquipeComponent,
     ListEquipeComponent,
+    
+    LoginComponent,
+         
+
+    
+    
 
   ],
   imports: [

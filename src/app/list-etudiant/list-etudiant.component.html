@@ -1,0 +1,24 @@
+<p>list-etudiant works!</p>
+
+    <table>
+    
+    
+    <tr> 
+    <th>Nom Etudiant</th> 
+    <th>Prenom Etudiant</th> 
+    <th>Option</th> 
+    <th>Actions</th>
+    </tr>
+    
+    
+    
+    <tr *ngFor="let e of etudiant ;let i = index" > 
+    <td>{{e.nomE}}</td>
+     <td>{{e.prenomE}}</td> 
+    <td>{{e.option}}</td> 
+    <td><button type="button" class="btn btn-danger" (click)="delete(e)">Delete</button></td>
+    <td><button type="button"   [routerLink]="['/etudiants/updateEtud', e.id]"  class="btn btn-outline-warning btn-block mb-75" > Update</button></td>
+    </tr>
+    
+    </table>
+<router-outlet></router-outlet>
